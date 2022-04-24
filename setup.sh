@@ -2,7 +2,7 @@
 setup () {
   cd $installdir
   apt update
-  apt install cmake build-essential -y
+  apt install cmake build-essential zip -y
   apt install checkinstall git -y
   git clone https://github.com/hashcat/hashcat.git
   cd hashcat
