@@ -19,6 +19,7 @@ setup () {
   ln -s $(pwd)/../run/zip2john /usr/local/bin/
   cd $installdir
   touch password.list
+  chmod 0777 password.list
 }
 
 if [ $# != 1 ]; then
