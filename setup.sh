@@ -2,8 +2,9 @@
 setup () {
   cd $installdir
   apt update
-  apt install cmake build-essential zip -y
+  apt install cmake build-essential -y
   apt install checkinstall git -y
+  apt install zip -y
   git clone https://github.com/hashcat/hashcat.git
   cd hashcat
   git submodule update --init
