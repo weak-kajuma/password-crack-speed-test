@@ -2,23 +2,15 @@
 setup () {
   cd $installdir
   apt update
-  apt install cmake build-essential -y
+  apt install cmake build-essentianl zip -y
   apt install checkinstall git -y
-  apt install zip -y
   git clone https://github.com/hashcat/hashcat.git
   cd hashcat
   git submodule update --init
   make
   make install
   cd $installdir
-  git clone https://github.com/magnumripper/JohnTheRipper.git
-  cd JohnTheRipper/src
-  ./configure
-  make -s clean
-  make -sj$(grep processor /proc/cpuinfo | wc -l)
-  make install
-  ln -s $(pwd)/../run/zip2john /usr/local/bin/
-  cd $installdir
+  snap install john-the-ripper
   touch password.list
   chmod 0777 password.list
 }
